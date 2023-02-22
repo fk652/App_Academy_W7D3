@@ -13,7 +13,13 @@ RSpec.describe "Users", type: :request do
       end
     end
     
-    
+    describe "GET /users (:index)" do
+      it "renders the users index" do
+        get users_url
+        expect(response).to have_http_status(200)
+        expect(response.body).to include("ALL NINJAS")
+      end
+    end
 
   end
 end

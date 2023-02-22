@@ -2,7 +2,7 @@
 
 <ul>
 <% @users.each do |user| %>
-  <a href="<%= user_url(user.id) %>">
+  <a href="https://naruto.fandom.com/wiki/<%= user.username.split(' ').join('_') %>">
     <li><%= user.username %></li>
   </a>
 <% end %>

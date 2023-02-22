@@ -5909,3 +5909,118 @@ Processing by UsersController#index as HTML
 Completed 200 OK in 38ms (Views: 35.9ms | ActiveRecord: 8.3ms | Allocations: 16594)
 
 
+Started GET "/users" for ::1 at 2023-02-22 17:13:39 -0500
+Processing by UsersController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering users/index.html.erb within layouts/application
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/views/users/index.html.erb:4
+  Rendered users/index.html.erb within layouts/application (Duration: 12.0ms | Allocations: 8415)
+  Rendered layout layouts/application.html.erb (Duration: 15.5ms | Allocations: 9928)
+Completed 200 OK in 17ms (Views: 15.8ms | ActiveRecord: 0.7ms | Allocations: 10168)
+
+
+Started GET "/users/201" for ::1 at 2023-02-22 17:13:42 -0500
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"201"}
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 201], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:24:in `show'
+  Rendering layout layouts/application.html.erb
+  Rendering users/show.html.erb within layouts/application
+  Rendered users/show.html.erb within layouts/application (Duration: 0.9ms | Allocations: 97)
+  Rendered layout layouts/application.html.erb (Duration: 6.8ms | Allocations: 1595)
+Completed 200 OK in 15ms (Views: 8.1ms | ActiveRecord: 0.9ms | Allocations: 3658)
+
+
+Started GET "/users/5" for ::1 at 2023-02-22 17:13:44 -0500
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"5"}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:24:in `show'
+  Rendering layout layouts/application.html.erb
+  Rendering users/show.html.erb within layouts/application
+  Rendered users/show.html.erb within layouts/application (Duration: 0.1ms | Allocations: 9)
+  Rendered layout layouts/application.html.erb (Duration: 5.1ms | Allocations: 1496)
+Completed 200 OK in 10ms (Views: 6.4ms | ActiveRecord: 0.5ms | Allocations: 2192)
+
+
+Started GET "/users/3" for ::1 at 2023-02-22 17:13:47 -0500
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:24:in `show'
+  Rendering layout layouts/application.html.erb
+  Rendering users/show.html.erb within layouts/application
+  Rendered users/show.html.erb within layouts/application (Duration: 0.3ms | Allocations: 9)
+  Rendered layout layouts/application.html.erb (Duration: 7.2ms | Allocations: 1517)
+Completed 200 OK in 13ms (Views: 9.0ms | ActiveRecord: 0.5ms | Allocations: 2213)
+
+
+Started GET "/users" for ::1 at 2023-02-22 17:13:50 -0500
+Processing by UsersController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering users/index.html.erb within layouts/application
+  [1m[36mUser Load (0.9ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/views/users/index.html.erb:4
+  Rendered users/index.html.erb within layouts/application (Duration: 12.4ms | Allocations: 8415)
+  Rendered layout layouts/application.html.erb (Duration: 16.7ms | Allocations: 9910)
+Completed 200 OK in 18ms (Views: 16.9ms | ActiveRecord: 0.9ms | Allocations: 10126)
+
+
+Started GET "/users/" for ::1 at 2023-02-22 17:18:07 -0500
+Processing by UsersController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering users/index.html.erb within layouts/application
+  Rendered users/index.html.erb within layouts/application (Duration: 5.1ms | Allocations: 3118)
+  Rendered layout layouts/application.html.erb (Duration: 5.9ms | Allocations: 3216)
+Completed 500 Internal Server Error in 9ms (ActiveRecord: 0.0ms | Allocations: 3911)
+
+
+
+ActionView::SyntaxErrorInTemplate - Encountered a syntax error while rendering template: check <h1>ALL NINJAS</h1>
+<ul>
+<% @users.each do |user| %>
+  <a href="https://naruto.fandom.com/wiki/<%= user.username.split(' ').join('_')#user_url(user.id) %>">
+    <li><%= user.username %></li>
+  </a>
+<% end %>
+</ul>:
+  app/controllers/users_controller.rb:20:in `index'
+
+Started POST "/__better_errors/b1ff84e6863e0111/variables" for ::1 at 2023-02-22 17:18:07 -0500
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT "users".* FROM "users" /* loading for inspect */ LIMIT $1[0m  [["LIMIT", 11]]
+  ↳ (eval):72:in `block in render'
+Started GET "/users/" for ::1 at 2023-02-22 17:18:30 -0500
+Processing by UsersController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering users/index.html.erb within layouts/application
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/views/users/index.html.erb:4
+  Rendered users/index.html.erb within layouts/application (Duration: 11.9ms | Allocations: 8713)
+  Rendered layout layouts/application.html.erb (Duration: 17.4ms | Allocations: 10683)
+Completed 200 OK in 21ms (Views: 19.8ms | ActiveRecord: 0.8ms | Allocations: 11403)
+
+
+Started GET "/users/62" for ::1 at 2023-02-22 17:18:38 -0500
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"62"}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 62], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:24:in `show'
+  Rendering layout layouts/application.html.erb
+  Rendering users/show.html.erb within layouts/application
+  Rendered users/show.html.erb within layouts/application (Duration: 0.8ms | Allocations: 97)
+  Rendered layout layouts/application.html.erb (Duration: 6.7ms | Allocations: 1598)
+Completed 200 OK in 13ms (Views: 8.6ms | ActiveRecord: 0.5ms | Allocations: 2394)
+
+
+Started GET "/users/" for ::1 at 2023-02-22 17:20:56 -0500
+Processing by UsersController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering users/index.html.erb within layouts/application
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/views/users/index.html.erb:4
+  Rendered users/index.html.erb within layouts/application (Duration: 9.4ms | Allocations: 4782)
+  Rendered layout layouts/application.html.erb (Duration: 19.0ms | Allocations: 6768)
+Completed 200 OK in 23ms (Views: 21.6ms | ActiveRecord: 0.8ms | Allocations: 7465)
+
+

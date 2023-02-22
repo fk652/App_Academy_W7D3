@@ -5,3 +5,18 @@
 #
 #   movies = Movie.create([{ name: "Star Wars" }, { name: "Lord of the Rings" }])
 #   Character.create(name: "Luke", movie: movies.first)
+
+
+ActiveRecord::Base.transaction do 
+
+        User.destroy_all
+        ApplicationRecord.connection.reset_pk_sequence!(:users)
+
+
+        200.times do 
+
+            FactoryBot.create(:user)
+
+
+        end
+end

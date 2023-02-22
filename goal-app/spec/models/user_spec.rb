@@ -25,13 +25,18 @@ RSpec.describe User, type: :model do
   end
 
   describe 'User::find_by_credentials' do 
-    # subject { User.create!(username: 'Hinatta', password: 'RASENGAN') }
-    before :each do 
-      create(:michaels_waifu)
-    end
+    # subject { User.create!(username: 'Hinata', password: 'narutoo') }
+    # before :each do 
+    #   create(:michaels_waifu)
+    # end
+    let(:waifu) { create(:michaels_waifu) }
+    
 
-    it 'should return the correct user' do
-      expect(User.find_by_credentials('Hinata', 'narutoo')).to eq(true)
+    it 'should return the correct user and return nil for invalid credentials' do
+      # waifu = create(:michaels_waifu)
+      waifu.save!
+      expect(User.find_by_credentials('Hinata', 'narutoo')).to eq(waifu)
+      expect(User.find_by_credentials('Sasuke', 'asdf')).to eq(nil)
     end
   end
 end

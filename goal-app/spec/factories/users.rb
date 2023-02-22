@@ -10,8 +10,8 @@
 #
 FactoryBot.define do
   factory :user do
-    username { Faker::JapaneseMedia::Naruto.character }
-    password { "RASENGAN" }
+    username { Faker::JapaneseMedia::Naruto.unique.character }
+    password { Faker::JapaneseMedia::Naruto.eye }
 
     factory :michaels_waifu do
       username { "Hinata" }

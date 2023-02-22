@@ -13,13 +13,13 @@ class User < ApplicationRecord
     validates :username, :password, presence: true
     validates :username, uniqueness: true
 
-    
+
     def self.find_by_credentials(un, pw)
         @user = User.find_by(username: un)
         if @user && @user.password == pw
-            return true
+            return @user
         end
-        return false
+        return nil
     end
 
 end

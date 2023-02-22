@@ -8,9 +8,12 @@
 #  created_at :datetime         not null
 #  updated_at :datetime         not null
 #
-FactoryBot.define do
-  factory :user do
-    username { Faker::JapaneseMedia::Naruto.character }
-    password { "RASENGAN" }
-  end
+class User < ApplicationRecord
+
+    validates :username, :password, presence: true
+    validates :username, uniqueness: true
+
+    
+    
+
 end

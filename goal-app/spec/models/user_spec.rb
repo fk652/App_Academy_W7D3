@@ -23,4 +23,15 @@ RSpec.describe User, type: :model do
 
     it { should validate_uniqueness_of(:username) }
   end
+
+  describe 'User::find_by_credentials' do 
+    # subject { User.create!(username: 'Hinatta', password: 'RASENGAN') }
+    before :each do 
+      create(:michaels_waifu)
+    end
+
+    it 'should return the correct user' do
+      expect(User.find_by_credentials('Hinata', 'narutoo')).to eq(true)
+    end
+  end
 end
